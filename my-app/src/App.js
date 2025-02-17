@@ -53,7 +53,7 @@ function App() {
       </svg>
           <p style = {{fontSize:"32px", color:"hsl(0 100% 100%)", fontFamily:"EB Garamond", fontWeight:"bold"}}>
             <br/>
-            ACCESSIBLE COMPONENT DESIGN
+            ACCESSIBLE COMPONENT DESIGN TEST TEST TEST
           </p>
 
           {/* <foreignObject x="0" y="175" width="100%" height="8000" > */}
