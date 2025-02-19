@@ -51,6 +51,9 @@ function App() {
                  width="100%" height={0} aria-label="loading screen">
                   {/* Idk why I had to put this svg window here but it got rid of some of the annoying white space at the top of the page */}
       </svg>
+
+      <iframe style={{border: "none"}} width="800" height="500" src="https://rive.app/s/Ad65nUpLXkSd33WXGoFQzQ/embed?runtime=rive-renderer" allowfullscreen allow="autoplay"></iframe>
+
           <p style = {{fontSize:"32px", color:"hsl(0 100% 100%)", fontFamily:"EB Garamond", fontWeight:"bold"}}>
             <br/>
             ACCESSIBLE COMPONENT DESIGN
