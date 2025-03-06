@@ -47,6 +47,14 @@
   height: 300px;
 }
 
+.bodyText{
+  color: hsla(0,100%,100%,100%);
+  font-family:"Courier";
+  margin-Left: 100px;
+  margin-right: 100px;
+  text-align: left;
+  /* font-size: 12px; */
+}
 
 .iframe {
   margin-right: 15px;

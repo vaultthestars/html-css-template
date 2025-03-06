@@ -24,27 +24,19 @@ import keyboard2 from './images/keyboard2.png';
 import redesigndefault from './images/default.png';
 import redesignhovered from './images/hovered.png';
 
+import rattycookersketch from './images/cooker.jpg';
+import georgenothy from './images/georgenothy.png';
+import lukewarm from './images/lukewarm.png';
+import storyboard1 from './images/storyboard_1.jpg';
+import storyboard2 from './images/storyboard_2.jpg';
+
 
 // import rivehover from './images/rivehover.png';
 import './App.css';
 import * as rive from "@rive-app/canvas";
 
-function App() {
-  const [Timer, setTimer] = useState(0);
-  useEffect(() => {
-    
-    const interval = setInterval(() => {
-      // Increase the Timer variable regardless of what's going on, since we have animations in all cases
-      setTimer((Timer + 0.001) % 1);
-    }
-    , 10);
-
-     return () => {clearInterval(interval);
-    }
-})
-
-  return (
-    <div className="App" style={{backgroundColor: "black"}}>
+function accesscomponents(){
+  return <div className="App" style={{backgroundColor: "black"}}>
       {/* <header className="App-header"> */}
 
       <svg className="svgwindow" fill = "true"
@@ -216,6 +208,245 @@ function App() {
       </svg>
       {/* </header> */}
     </div>
+}
+
+function personas(){
+  return <div className="App" style={{backgroundColor: "black"}}>
+      {/* <header className="App-header"> */}
+
+      <svg className="svgwindow" fill = "true"
+                 width="100%" height={0} aria-label="loading screen">
+                  {/* Idk why I had to put this svg window here but it got rid of some of the annoying white space at the top of the page */}
+      </svg>
+
+      <iframe style={{border: "none"}} width="800" height="500" src="https://rive.app/s/Ad65nUpLXkSd33WXGoFQzQ/embed?runtime=rive-renderer" allowfullscreen allow="autoplay"></iframe>
+
+          <p style = {{fontSize:"32px", color:"hsl(0 100% 100%)", fontFamily:"EB Garamond", fontWeight:"bold"}}>
+            <br/>
+            PERSONAS AND STORYBOARDING
+          </p>
+
+          {/* <foreignObject x="0" y="175" width="100%" height="8000" > */}
+              <p className="bodyText">
+              <b>PART 1: Preparation</b>
+              <br/>
+              <br/>
+              For this assignment, I studied how users interact with the Ratty pasta cooker, also known as the HATCO RAPIDE CUISINE COUNTERTOP INDUCTION RANGE.
+              <br/>
+              <br/>
+              I observed users at the Ratty and took notes, and then interviewed three people on their experience using the
+              interface. I asked each interviewee the same four simple questions. 
+                <ul>
+                  <li>How do you use this machine? What parameters can you change and how do you change them?</li>
+                  <li>If you were to write instructions on how to cook pasta using this device, what would you write?</li>
+                  <li>If you were to add labels to this device, where would you place them and what would they say?</li>
+                  <li>If you could redesign the physical inputs of this interface, is there anything that you would change?</li>
+                </ul>                
+              </p>
+              <img src={rattycookersketch} width = "400" className="screenshot" alt="logo" />
+              <p style={{color:"white", fontFamily:"Courier",  marginLeft: "100px", marginRight: "100px", textAlign: "middle"}}>
+                <i>An annotated sketch of the Ratty pasta cooker</i>
+                <br/>
+                <br/>
+              </p>
+
+              <p className="bodyText">
+              The induction cooker turns on and off in sort of a strange way- the temperature knob must be pushed in in order to turn the device on and off. You can then turn the knob to set the temperature that the cooktop will heat the pan to, and the induction cooktop immediately starts heating up whatever is on it. Note: the induction cooktop does not actually visually change in any sort of way to indicate that heating has started. Clicking the timer button allows you to change the timer duration using the same temperature knob(must provide input within 3 seconds), upon which the timer will automatically start. When the timer runs out, the power will drop to 0 automatically.
+              </p>
+
+              <p className="bodyText">
+              
+              <b>PART 2: Recording Observations</b>
+              <br/>
+              <br/>
+              <b>Write a few sentences or bullets describing the key observations you gained from observing your users. Do not make any assumptions about the users’ behaviors or thought processes. Make sure you note general patterns in their interactions with the interface. How did the users react while using the interface? How does it differ from other users?</b>
+              <ul>
+                  <li>One user didn’t turn off the burner when they left</li>
+                  <li>All three users knew how to use the machine when they arrived at it, aka they correctly turned the machine on, set the temperature, and cooked their pasta</li>
+                  <li>Most users cook for about an average of 2-3 minutes</li>
+                  <li>None of the users used the timer function on the cooker</li>
+                </ul>    
+              <b>List your questions in a numbered list and summarize the responses of your interviewed users. Be sure to highlight the main points or important patterns. Your summary should be both concise and informative.</b>
+              <ol>
+                <li>How do you use this machine? What parameters can you change and how do you change them?</li>
+                <li>If you were to write instructions on how to cook pasta using this device, what would you write?</li>
+                <li>If you were to add labels to this device, where would you place them and what would they say?</li>
+                <li>If you could redesign the physical inputs of this interface, is there anything that you would change?</li>
+              </ol>  
+              
+
+              {/* INSERT TABLE HERE! */}
+
+              <table style = {{backgroundColor: "bisque", color: "black"}}>
+              <tr>
+                <th>Name</th>
+                <th>Response</th>
+              </tr>
+              <tr>
+                <td>Adrianna</td>
+                <td>
+                  <ul>
+                    <li>The main thing you use on the machine is the knob. You press it to turn it on and turn the dial to change the heat.</li>
+                    <li>Put the pan on the hot plate, put  the pasta in the pan, press the button to turn on, wait until graphic appears, turn clockwise to appropriate heat, turn until satisfied, remove and turn off.</li>
+                    <li>Next to power button, put a label that says "press". Some people turn it but you need to press it.</li>
+                    <li>Maybe suggest a time limit. Never used the clock button so maybe label that.</li>
+                  </ul> 
+                </td>
+              </tr>
+              <tr>
+                <td>Mohammad</td>
+                <td>
+                  <ul>
+                    <li>To use the machine, put the pasta on the pan, put it to 85, while it’s cooking, move it continuously. Use the spices and mix it thoroughly for 2-3 minutes.</li>
+                    <li>Get what you want, put some preliminary ingredients in there. At the machine, set it to the heat you want, 70s to 80s, don’t do it too high, keep turning the pasta, add spices as need until you feel hot that it's enough.</li>
+                    <li>Idk, feel like labels are pretty self explanatory. I wouldn’t add anything except for a do not touch on the hot plate bc looks the same when it's off and when it's on.</li>
+                    <li>Um, I don't know. The timer isn’t consistent on there so you just need to do it yourself. Find the optimal time for good heated pasta. Maybe add some weight sensor that gives a better estimate of cook time.</li>
+                  </ul> 
+                </td>
+              </tr>
+              <tr>
+                <td>Kimberly</td>
+                <td>
+                  <ul>
+                    <li>Get pasta, add ingredients, sauce, turn on the stove, get pan, add stuff, mix it around. Click the button down to turn it on, can turn it up to 100, usually keep it at 40, don’t like it when it’s cold but don’t want to burn it. 3-5 minutes. Once done, take it off, turn it off.</li>
+                    <li>I'm not sure. I didn’t know how to turn it on at first, so I watched someone else do it before I tried it.</li>
+                    <li>I don't know. Maybe label the temperature knob as an on and off button.</li>
+                    <li>It could tell you how many minutes you should cook the pasta for, like some sort of timer. [when asked] I didn't know that the machine has a timer function.</li>
+                  </ul> 
+                </td>
+              </tr>
+            </table>
+
+            <br/>
+
+            <b>RESPONSE SUMMARY:</b>
+
+            <ul>
+              <li>Two users noted that it seems like the knob is just for turning but you actually have to press it.</li>
+              <li>One user said to label the hot plate so that people knew it was hot because it doesn’t visually change at all. Turns out it’s an induction cooktop, so the surface itself doesn't get hot, it just heats the pan.</li>
+              <li>Two out of three users didn’t know the burner had a timer function, and the third person noted the timer was inconsistent.</li>
+              <li>One user didn’t know how to use the machine at first, so they watched someone else use it before trying to use it themselves.</li>
+            </ul> 
+
+            <br/>
+
+            <b>PART 3: Personas</b>
+              <br/>
+              <br/>
+              <b>Using the observations and interviews you collected from parts 1 & 2, construct 2 personas by creating a four-quadrant empathy map, 
+                describing what users think, feel, say, and do for one archetypal character ​that will represent part of the spectrum of users you observed. </b>
+
+                <br/>
+                <br/>
+
+              <b>For each empathy map, also add a description that covers the following:
+              Briefly describe the user  (1 sentence headline)
+              Point out the interface problems that your personas face. 
+              Explain why and how a given persona represents the users of your chosen interface.
+              </b>
+
+              <br/>
+              <br/>
+
+            <img src={lukewarm} width = "1000" className="screenshot" alt="logo" />
+
+            <br/>
+            <br/>
+
+            <b>Description:</b>
+
+            <br/>
+            <br/>
+
+            Stressed, sleep deprived, and self conscious, Lukewarm Tomatopaste (a freshman and aspiring econ concentrator) views life as a never-ending series of unpleasant surprises. 
+
+            <br/>
+
+            Lukewarm tends to go into a panic when things don't go as planned, frantically trying random things until something works out. They dread inconveniencing the lives of others.
+            The confusing dual-functionality of the pasta cooker, as well as the inacessibility of the timer button will likely confuse Lukewarm and make them second guess themselves.
+
+            <br/>
+
+            This persona represents the stress that users of the ratty pasta cooker may feel, as I noticed that the lines for the pasta machine can become quite long, and that most users
+            rarely go over the 2-3 minute cook time(so as to keep the line moving).
+
+            <br/>
+            <br/>
+
+            <img src={georgenothy} width = "1000" className="screenshot" alt="logo" />
+
+            <br/>
+            <br/>
+
+            <b>Description:</b>
+
+            <br/>
+            <br/>
+
+            Cool, confident, and a culinary commander, Georgenothy Thompsonson (a junior and political science major) takes control of any situation he is placed in, moving with determination, regardless of if they are in the right or the wrong.
+
+            <br/>
+
+            Georgenothy is a veteran ratty-goer. The cafeteria is their domain. Georgenothy frequently cooks for themselves at home using their gas range, so the induction cooktops of the ratty
+            pasta machine offer little visual feedback compared to the gas burners at home.
+
+            <br/>
+
+            This persona represents the people I observed at the ratty who navigated the pasta machine with ease, who not only used the interface as intended but went above and beyond, shaking spices and cheeses over their pasta with the skill of a venerable artist painting their latest masterpiece.
+
+            <b>PART 4: Storyboards</b>
+              <br/>
+              <br/>
+
+            For this storyboard, I mapped out a sequence that someone like Lukewarm might experience when using the Ratty pasta cooker.
+
+            <br/>
+            <br/>
+
+            <img src={storyboard1} width = "1000" className="screenshot" alt="logo" />
+
+            <img src={storyboard2} width = "1000" className="screenshot" alt="logo" />
+
+            <br/>
+            <br/>
+
+            </p>
+
+              
+
+
+              {/* TODO: Do state model part */}
+              {/* TODO: Add reflection */}
+
+
+
+              <br></br>
+              <iframe style={{border: "none", float: "left", marginLeft: "100px"}} width="375" height="375" src="https://rive.app/s/jst2RTWkaE_RHw7HLrTy1A/embed?runtime=rive-renderer" allowfullscreen allow="autoplay"></iframe>
+
+          <svg className="svgwindow" fill = "true"
+                 width="100%" height={0} aria-label="loading screen">
+                  {/* Idk why I had to put this svg window here but it got rid of some of the annoying white space at the top of the page */}
+      </svg>
+      {/* </header> */}
+    </div>
+}
+
+function App() {
+  const [Timer, setTimer] = useState(0);
+  useEffect(() => {
+    
+    const interval = setInterval(() => {
+      // Increase the Timer variable regardless of what's going on, since we have animations in all cases
+      setTimer((Timer + 0.001) % 1);
+    }
+    , 10);
+
+     return () => {clearInterval(interval);
+    }
+})
+
+  return (
+    personas()
   );
 }
 
