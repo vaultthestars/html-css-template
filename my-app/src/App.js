@@ -30,6 +30,18 @@ import lukewarm from './images/lukewarm.png';
 import storyboard1 from './images/storyboard_1.jpg';
 import storyboard2 from './images/storyboard_2.jpg';
 
+import fairviewscreenshot from './images/fairviewfarms screenshot.png';
+import macbook1 from './images/MacBook Air - 1.png';
+import macbook2 from './images/MacBook Air - 2.png';
+import ipad1 from './images/iPad Pro 11_ - 1.png';
+import ipad2 from './images/iPad Pro 11_ - 2.png';
+import iphone1 from './images/iPhone SE - 1.png';
+import iphone2 from './images/iPhone SE - 2.png';
+
+import remadeguide from './images/remadeguide.png';
+import remademac from './images/remademacbook.png';
+import remadeiphone from './images/remadeiphone.png';
+
 
 // import rivehover from './images/rivehover.png';
 import './App.css';
@@ -431,6 +443,208 @@ function personas(){
     </div>
 }
 
+function responsiveredesign(){
+  return <div className="App" style={{backgroundColor: "black"}}>
+      <svg className="svgwindow" fill = "true"
+                 width="100%" height={0} aria-label="loading screen">
+      </svg>
+
+      {/* REDESIGNED PAGE LINK: https://vaultthestars-github-io.vercel.app/ */}
+
+      <iframe style={{border: "none"}} width="800" height="500" src="https://rive.app/s/Ad65nUpLXkSd33WXGoFQzQ/embed?runtime=rive-renderer" allowfullscreen allow="autoplay"></iframe>
+
+          <p style = {{fontSize:"32px", color:"hsl(0 100% 100%)", fontFamily:"EB Garamond", fontWeight:"bold"}}>
+            <br/>
+            RESPONSIVE REDESIGN
+          </p>
+
+          {/* <foreignObject x="0" y="175" width="100%" height="8000" > */}
+              <p className="bodyText">
+              <b>PART 1: Research</b>
+              <br/>
+              <br/>
+              For this assignment, we were tasked with redesigning an online website using the principles of accessible design. 
+              I chose to research and redesign the homepage of a farm I worked at for two summers in high school. The farm is named Fairview Farms, and is located in Mecox, Long Island.
+              Here is a screenshot of their current webpage:
+              <br/>
+              </p>
+
+              <img src={fairviewscreenshot} width = "800" className="screenshot" alt="logo" />
+
+              <p className = "bodyText">
+              <br/>
+
+              I then took some time to compile my personal thoughts on the page, conduct accessibility analyses on the page via
+              WebAim and Lighthouse, and summarize the main issues with the page w/r to efficiency, learnability, and memorability.
+
+              <br/>
+              <br/>
+              <b>[PERSONAL THOUGHTS]</b>
+              <br/>
+              <ul>
+                  <li>There’s a lot of blank space on the page that could potentially be better filled with some sort of responsive flexbox scheme. </li>
+                  <li>The homepage does not actually display most of the key information that a user might want when visiting the site, such as the foods they offer and the hours that the shop operates under.</li>
+                  <li>It is also unclear whether or not the “closed for the winter” text updates live when the page was last updated.</li>
+                </ul> 
+              <br/>
+              <b>[WEBAIM WAVE and LIGHTHOUSE]</b>
+              <br/>
+              <br/>
+              The webpage scored a 95 on accessibility on Lighthouse but I still think the design itself could be standardized and cleaned up a bit.
+WebAim WAVE gave it 10 “very low contrast” errors on the homepage and also said that some heading levels were skipped and that there was “suspicious alternative text”
+17 very low contrast errors on the “our products” site and 39 possible headings, and the same score on the “our stories” page
+
+              <br/>
+              <br/>
+              <b>[SUMMARY TABLE OF THOUGHTS]</b>
+              <br/>
+              <br/>
+              <table style = {{backgroundColor: "bisque", color: "black"}}>
+              <tr>
+                <th>Efficiency</th>
+                <th>Learnability</th>
+                <th>Memorability</th>
+              </tr>
+              <tr>
+                <td>
+                <ul>
+                  <li>The page is fairly simple in layout, and does not really have much redundancy.</li>
+                  <li>The “Our Products” page does not compactly list the items the store sells, instead alternating between left and right aligned text, forcing the reader’s eyes to jump around the page.</li>
+                  <li>The main redundant component is probably the contact/message box at the bottom of each page, which could probably be moved to the “contact us” subpage of the website.</li>
+                </ul> 
+                </td>
+                <td>
+                <ul>
+                  <li>The page’s text scores low on contrast, making it difficult for new users to read and learn.</li>
+                  <li>Text color does not always correlate with functionality on the page, which makes it confusing for new users. Ex: Multiple instances of the same yellow text, but some are interactive and some are non-interactive.</li>
+                  <li>The text does not have a clear styling hierarchy, which makes it confusing to users what order to interact with elements in.</li>
+                </ul> 
+                </td>
+                <td>
+                <ul>
+                  <li>Due to the inconsistencies + variations in styling, it would be difficult for a user to conjure what this webpage looks like from memory.</li>
+                  <li>The current logo is a detailed photograph, which has too much information in it to be memorable.</li>
+                  <li>The font style is fairly distracting and detracts from the memorability of the text content.</li>
+                </ul> 
+                </td>
+              </tr>
+            </table>
+
+            <br/>
+
+            <b>Part 2: Initial Figma Mockup</b>
+
+            <br/>
+            <br/>
+
+            Keeping these observations in mind, I set about drafting up a mock redesign of the webpage. 
+
+            <br/>
+
+            </p>
+
+            <img src={macbook1} width = "800" className="screenshot" alt="logo" /> 
+            <img src={macbook2} width = "800" className="screenshot" alt="logo" />
+
+            <p className="bodyText">
+              Here is the mockup I created for the macbook pro- I tried to reduce the number of onscreen objects, 
+              while still keeping the photo-centric design of the old webpage. I used a scrolling parallax photo 
+              background of Fairview's corn fields, as well as a minimalist design for the top menu buttons. 
+
+              <br/>
+
+              I chose to make the white text turn yellow on hover + gain a drop shadow, but ended up changing this later.
+              I also experimented with some potential ideas for a dropdown menu design as a way to respond to the priority in which 
+              users might wish to access certain menu items. For example, the challah and pies are two of the most commonly pre-ordered items
+              from the farmstand, so users might wish to have a shortcut to access those pages. However, I ultimately decided to not include the dropdown menus
+              for the sake of scalability.
+
+            </p>
+
+            <img src={ipad1} width = "400" className="screenshot" alt="logo" /> 
+
+            ___
+
+            <img src={ipad2} width = "400" className="screenshot" alt="logo" />
+
+            <p className="bodyText">
+              The ipad mockup ended up not being that different compared to the MacBook design, I just made the text size a little smaller.
+            </p>
+
+            <img src={iphone1} width = "400" className="screenshot" alt="logo" /> 
+
+            ___
+
+            <img src={iphone2} width = "400" className="screenshot" alt="logo" />
+
+            <p className="bodyText">
+              For the iphone mockup, I had to figure out how to navigate the newly imposed spatial constraints. To deal with this, I made the horizontal menu bar into a vertical menu bar and collapsed it into an expandable hamburger menu.
+              I've embedded them as iframes below, but here's the direct link as well:
+              <a href="https://vaultthestars-github-io.vercel.app/" style = {{color: "white"}}>https://vaultthestars-github-io.vercel.app/</a>
+
+            </p>
+
+            <iframe style={{border: "none", marginLeft: "100px"}} width="1200" height="800" src="https://vaultthestars-github-io.vercel.app/" allowfullscreen allow="autoplay"></iframe>
+
+            <iframe style={{border: "none", marginLeft: "100px"}} width="600" height="800" src="https://vaultthestars-github-io.vercel.app/" allowfullscreen allow="autoplay"></iframe>
+
+            <p className="bodyText">
+              I changed a few things in the redesign- mostly, I made it so that the button text doesn't turn yellow on hover, since the change wasn't
+              visible enough- the drop shadow also didn't show up enough on the darkened background, so I ditched that as well. Instead, I kept the white
+              text during the non-hover and hovered states and toggled a darkened rectangular background on and off on hover. 
+              
+              <br/>
+
+              I removed the drowdown menus from the initial mockups to reduce visual clutter, and per feedback from the critique session, reduced the opacity of the
+              expanding hamburger dropdown menu. I also added a footer to the webpage to 
+
+              <br/>
+              
+              &nbsp; 1: maintain the parallax effect.
+
+              <br/>
+              
+              &nbsp; 2: include standard footer info.
+
+              <br/>
+
+              From there, I remade the original style guide and mockups to reflect the redesign:
+
+              </p>
+
+              <img src={remadeguide} width = "800" className="screenshot" alt="logo" />
+
+              <img src={remademac} width = "1000" className="screenshot" alt="logo" />
+
+              <br/>
+
+              <img src={remadeiphone} width = "400" className="screenshot" alt="logo" />
+
+
+
+            
+
+
+
+              
+
+
+              {/* TODO: Do state model part */}
+              {/* TODO: Add reflection */}
+
+
+
+              <br></br>
+              <iframe style={{border: "none", float: "left", marginLeft: "100px"}} width="375" height="375" src="https://rive.app/s/jst2RTWkaE_RHw7HLrTy1A/embed?runtime=rive-renderer" allowfullscreen allow="autoplay"></iframe>
+
+          <svg className="svgwindow" fill = "true"
+                 width="100%" height={0} aria-label="loading screen">
+                  {/* Idk why I had to put this svg window here but it got rid of some of the annoying white space at the top of the page */}
+      </svg>
+      {/* </header> */}
+    </div>
+}
+
 function App() {
   const [Timer, setTimer] = useState(0);
   useEffect(() => {
@@ -446,7 +660,7 @@ function App() {
 })
 
   return (
-    personas()
+    responsiveredesign()
   );
 }
 
