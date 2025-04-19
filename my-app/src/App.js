@@ -42,6 +42,18 @@ import remadeguide from './images/remadeguide.png';
 import remademac from './images/remademacbook.png';
 import remadeiphone from './images/remadeiphone.png';
 
+import mechahealthinitsketch from './images/mechahealthinitsketch.png';
+import tablet1sketch from './images/tablet1.png';
+import desktop21 from './images/desktop21.png';
+import desktop22 from './images/desktop22.png';
+import tablet21 from './images/tablet 21.png';
+import tablet22 from './images/tablet 22.png';
+
+import bmhp from './images/bmhp.png';
+import bmf from './images/bmf.png';
+import bmu from './images/bmu.png';
+import bms from './images/bms.png';
+import bms2 from './images/bms2.png';
 
 // import rivehover from './images/rivehover.png';
 import './App.css';
@@ -645,6 +657,252 @@ WebAim WAVE gave it 10 “very low contrast” errors on the homepage and also s
     </div>
 }
 
+function iterativedesign(){
+  return <div className="App" style={{backgroundColor: "black"}}>
+      <svg className="svgwindow" fill = "true"
+                 width="100%" height={0} aria-label="loading screen">
+      </svg>
+
+          <p style = {{fontSize:"32px", color:"hsl(0 100% 100%)", fontFamily:"EB Garamond", fontWeight:"bold"}}>
+            <br/>
+            Iterative Design and Evaluation
+          </p>
+
+          {/* <foreignObject x="0" y="175" width="100%" height="8000" > */}
+              <p className="bodyText">
+              <b>By Jiwon Yoo, William Park, Thais Santos, and Dylan Lee</b>
+              <br/>
+              <br/>
+              <b>Context, Type of interface, Users impacted: </b>
+              <br/>
+              <br/>
+Our service is Mecha Health, a health tech start-up. Their product aims to revolutionize X-ray analysis through AI and automation. They aim to redefine how medical imaging is interpreted by reducing the radiology reporting process from 1 scan per hour to 1 scan per 5 minutes, alleviating burnout and improving care delivery. 
+<br/>
+              <br/>
+We are designing a desktop web interface tailored for use by radiologists, clinical technicians, and potentially patients. The radiologists would be impacted as they are the target customers for the application to improve their efficiency, as they are currently experiencing burnout and are demanding a more efficient and trustworthy tool that allows them to quickly review. Such AI-generated draft reports, verifying findings, and finalizing the diagnostic process would speed up their process. Clinical technicians would also be impacted as they may use the interface to upload scans, track report progress, etc. Patients are not direct users, but they are indirectly impacted through faster diagnosis turnaround, more accurate assessments, and improved treatment timelines. 
+<br/>
+              <br/>
+The interface must support large image formats, detailed annotation tools, and viewing of scans and structured reports to help enhance the efficiency of scans for clinicians. 
+
+              <br/>
+              <br/>
+
+              <b>Sketches:</b>
+
+              <br/>
+              <br/>
+For initial sketches, before we decided on working on desktop, we decided to design for desktop and tablets to give more options to choose from.
+
+<br/>
+              <br/>
+
+              <b>Desktop Sketch 1: </b>
+
+
+              </p>
+
+              <img src={mechahealthinitsketch} width = "800" className="screenshot" alt="logo" />
+
+              <p className="bodyText">
+              Notes: 
+              <ul>
+                  <li>Focused on priority: We thought the X-ray itself was the most important part, hence made that image big. Also segmented the AI diagnosis is segmented to the side to separate the attention, but is also easily visible. We put the carousel in the bottom so the users can easily see where they are on, without being distracted. </li>
+                  <li>This sketch itself was the final sketch after multiple iterative designs.</li>
+              </ul> 
+
+              <br/>
+              <br/>
+
+              <b>Tablet Sketch 1: </b>
+
+              </p>
+
+              <img src={tablet1sketch} width = "800" className="screenshot" alt="logo" />
+
+              <p className="bodyText">
+              Notes: 
+              <ul>
+                  <li>Tablet version of the desktop sketch from above. Still maintaining the same priority with the large X-ray screen, and other parts being minimized (e.g. tap to look further)</li>
+              </ul> 
+
+              <br/>
+              <br/>
+
+              <b>Desktop Sketch 2: </b>
+
+              </p>
+
+              <img src={desktop21} width = "400" className="screenshot" alt="logo" />
+              <img src={desktop22} width = "400" className="screenshot" alt="logo" />
+
+              <p className="bodyText">
+              Notes: 
+              <ul>
+                  <li>Focused on making a simple and clean look for the website, highlighting only key functionalities.</li>
+                  <li>Large images and icons were used to draw user attention to important descriptions and demos and where action is needed (e.g., uploading image placeholder)</li>
+                  <li>Blocks of text were avoided, favoring images and demos to retain user attention.</li>
+              </ul> 
+
+
+              <br/>
+              <br/>
+
+              <b>Tablet Sketch 2: </b>
+
+              </p>
+
+              <img src={tablet21} width = "400" className="screenshot" alt="logo" />
+              <img src={tablet22} width = "400" className="screenshot" alt="logo" />
+
+              <p className="bodyText">
+              Notes: 
+              <ul>
+                  <li>Tablet version of the desktop sketch from above. Still maintaining the same priority with large images and minimal text blocks. Components were redesigned to fit the screen appropriately (e.g., hamburger compressed header).</li>
+              </ul> 
+
+              <br/>
+
+              <b>Design decisions:</b>
+
+              <br/>
+              <br/>
+
+              Throughout the sketching process, we aimed to optimize clarity, speed, and user trust – crucial factors for radiologists working in high-pressure environments. 
+
+              <br/>
+              <br/>
+
+              Homepage
+              <ul>
+                  <li>Establish immediate clarity about Mecha Health’s mission while keeping the interface visually clean.</li>
+                  <li>This will help users understand what Mecha Health does at a glance and build trust through clarity. We also wanted to avoid distraction and guide users straight to the service they provide. </li>
+              </ul> 
+
+              <br/>
+
+              Folder
+              <ul>
+                  <li>One of our sketches proposed a folder hub to manage scanned files. </li>
+                  <li>We implemented a drag-and-drop functionality and a clear display of previously uploaded scans, creating a fluid interaction model between review and upload. </li>
+                  <li>This allows users to quickly retrieve past studies and add new ones. </li>
+                  <li>We are considering adding a tick or some sort of a mark that indicates what has been reviewed and not to review again, to enhance the efficiency of going through a bunch of files. </li>
+              </ul> 
+
+              <br/>
+
+              Upload
+              <ul>
+                  <li>Decided to go with a very minimal design, directing user attention to a large area to upload x-rays and show progress of the uploaded files. </li>
+              </ul> 
+
+              <br/>
+
+              Diagnosis
+              <ul>
+                  <li>As radiologists often face lag time and information overload, we focused on speed, simplicity, and efficiency. </li>
+                  <li>Large central X-ray image for clear visibility. The X-ray image is also annotated with symptoms that are highlighted to direct the radiologist’s attention to. These symptom markers are clickable and expand into deeper explanations. You can also hide these symptom bars to view the full image without any annotations. </li>
+                  <li>Right sidebar for automatically generated AI diagnosis with easy approve/edit options. </li>
+                  <li>Bottom carousel for quick switching between other scan views. Tick marks are shown to indicate which scans have been approved with a diagnosis. </li>
+              </ul> 
+
+              These design decisions combined are represented in our wireframes using Balsamiq below: 
+
+              <br/>
+              <br/>
+
+              <b>Balsamiq Wireframes:</b>
+
+              <br/>
+              <br/>
+
+              <b>Homepage:</b>
+
+              </p>
+
+              <img src={bmhp} width = "400" className="screenshot" alt="logo" />
+
+              <p className="bodyText">
+              <b>Interactive Homepage sketch in Rive:</b>
+              </p>
+
+              <iframe style={{border: "none"}} width="1024" height="768" src="https://rive.app/s/18Lfs3F0zEqPbQ60pFXnsQ/embed?runtime=rive-renderer" allowfullscreen allow="autoplay"></iframe>
+
+              <p className="bodyText">
+              <b>Folder page:</b>
+              </p>
+
+              <img src={bmf} width = "400" className="screenshot" alt="logo" />
+
+              <p className="bodyText">
+              <b>Upload page:</b>
+              </p>
+
+              <img src={bmu} width = "400" className="screenshot" alt="logo" />
+
+              <p className="bodyText">
+              <b>Scan page:</b>
+              </p>
+
+              <img src={bms} width = "400" className="screenshot" alt="logo" />
+
+              <p className="bodyText">
+              <b>Scan page, expanded window:</b>
+              </p>
+
+              <img src={bms2} width = "400" className="screenshot" alt="logo" />
+
+              <p className="bodyText">
+
+              <br/>
+
+              Loom Video: 
+ <a style = {{color: "white"}} href = "https://www.loom.com/share/811b2f89d858426dbbdb9c2c0f818821?sid=2086878b-5e82-4f05-b8da-2d31e5eb9fc3">https://www.loom.com/share/811b2f89d858426dbbdb9c2c0f818821?sid=2086878b-5e82-4f05-b8da-2d31e5eb9fc3</a>
+<br/>
+<br/>
+<b>Critique:</b>
+<ul>
+                  <li>some profile/login for folder. </li>
+                  <li>thumbnails for carousels. </li>
+                  <li>indicate completion with other ui component. </li>
+                  <li>more clarity with edit/approve function. </li>
+                  <li>marker for active image. </li>
+                  <li>arrows for carousel to make more intuitive. </li>
+                  <li>interaction with most components. </li>
+</ul> 
+
+<b>Design Changes:</b>
+<br/>
+Following the critique, we made several adjustments to our design to improve usability and clarity:
+<ul>
+                  <li>Profile/Login: We incorporated a profile icon throughout the entire app, which was previously missing. This addition helps ground the user’s navigation experience and supports personalization.</li>
+                  <li>Edit/Approve Function: We removed this feature after realizing it aligned with a different service model. While MechaHealth does support this functionality, it didn’t align with the specific user flow we wanted to highlight. </li>
+                  <li>Carousel Navigation: We included arrows for the carousel as suggested in the critique, which made scrolling more intuitive, and made further intuitive by switching to a vertical layout, which better fits our content structure.</li>
+                  <li>Interaction with Components: We added more interactive elements throughout the interface to create a more engaging and responsive experience, aligning with the feedback to increase interactivity. </li>
+                  <li>Information Reduction: We added icons and color coordinated in places to make functionalities intuitive, reducing the amount of information needed to be shown, supporting a better user experience. Expandable and collapsable tabs were added in the scans page to further reduce immediate information shown, drawing user attention to certain prioritized figures.</li>
+</ul> 
+
+Additional Changes Outside of Critique:
+<br/>
+We also refined our design for the service by implementing a centralized theme across all pages. This includes a consistent color palette (navy blue, yellow, gray) and a chrome tab-style design, which helped unify the app visually. 
+<br/>
+<br/>
+Loom: Watch on 1.2x! (5:36)
+<a style = {{color: "white"}} href = "https://www.loom.com/share/e3301348cce2463d953b2f950e0a3f19?sid=a522c66f-8e86-411d-b97a-e3d6e16fcb8c">https://www.loom.com/share/e3301348cce2463d953b2f950e0a3f19?sid=a522c66f-8e86-411d-b97a-e3d6e16fcb8c</a>
+
+<br/>
+
+Figma Prototype: <a style = {{color: "white"}} href = "https://www.figma.com/proto/4IUXrHO1lsUBFQBXD6qF8d/Iterative-Design-Hifi?node-id=47-338&p=f&t=AKfb0EDoYf5GE5ee-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=47%3A338">https://www.figma.com/proto/4IUXrHO1lsUBFQBXD6qF8d/Iterative-Design-Hifi?node-id=47-338&p=f&t=AKfb0EDoYf5GE5ee-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=47%3A338</a>
+
+              </p>
+
+          <svg className="svgwindow" fill = "true"
+                 width="100%" height={0} aria-label="loading screen">
+                  {/* Idk why I had to put this svg window here but it got rid of some of the annoying white space at the top of the page */}
+      </svg>
+      {/* </header> */}
+    </div>
+}
+
 function App() {
   const [Timer, setTimer] = useState(0);
   useEffect(() => {
@@ -660,7 +918,7 @@ function App() {
 })
 
   return (
-    responsiveredesign()
+    iterativedesign()
   );
 }
 
