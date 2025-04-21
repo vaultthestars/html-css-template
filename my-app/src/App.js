@@ -55,6 +55,13 @@ import bmu from './images/bmu.png';
 import bms from './images/bms.png';
 import bms2 from './images/bms2.png';
 
+import hfhomepage from './images/hfhome.png';
+import hffoldergrid from './images/hffoldergrid.png';
+import hffolderlist from './images/hffolderlist.png';
+import hfsettings from './images/hfsettings.png';
+import hfscan from './images/hfscan.png';
+import hfspot from './images/hfspot.png';
+
 // import rivehover from './images/rivehover.png';
 import './App.css';
 import * as rive from "@rive-app/canvas";
@@ -883,15 +890,113 @@ Following the critique, we made several adjustments to our design to improve usa
 
 Additional Changes Outside of Critique:
 <br/>
-We also refined our design for the service by implementing a centralized theme across all pages. This includes a consistent color palette (navy blue, yellow, gray) and a chrome tab-style design, which helped unify the app visually. 
-<br/>
-<br/>
+We also refined our design for the service by implementing a centralized theme across all pages. This includes a consistent color palette (navy blue, white, gray) and a chrome tab-style design, which helped unify the app visually. 
+Here are some images of the final Hi-Fi prototype:
+</p>
+
+<p className="bodyText">
+  <b>Homepage:</b>
+</p>
+
+<img src={hfhomepage} width = "800" className="screenshot" alt="logo" />
+
+<p className="bodyText">
+  <b>Folder, grid view:</b>
+</p>
+
+<img src={hffoldergrid} width = "800" className="screenshot" alt="logo" />
+
+<p className="bodyText">
+  <b>Folder, list view:</b>
+</p>
+
+<img src={hffolderlist} width = "800" className="screenshot" alt="logo" />
+
+<p className="bodyText">
+  <b>Settings page:</b>
+</p>
+
+<img src={hfsettings} width = "800" className="screenshot" alt="logo" />
+
+<p className="bodyText">
+  <b>Scan page, report and spot analysis:</b>
+</p>
+
+<img src={hfscan} width = "800" className="screenshot" alt="logo" />
+
+<p className="bodyText">
+  <b>Scan page, spot analysis:</b>
+</p>
+
+<img src={hfspot} width = "800" className="screenshot" alt="logo" />
+
+<p className="bodyText">
+
+
 Loom: Watch on 1.2x! (5:36)
 <a style = {{color: "white"}} href = "https://www.loom.com/share/e3301348cce2463d953b2f950e0a3f19?sid=a522c66f-8e86-411d-b97a-e3d6e16fcb8c">https://www.loom.com/share/e3301348cce2463d953b2f950e0a3f19?sid=a522c66f-8e86-411d-b97a-e3d6e16fcb8c</a>
 
 <br/>
+<br/>
 
-Figma Prototype: <a style = {{color: "white"}} href = "https://www.figma.com/proto/4IUXrHO1lsUBFQBXD6qF8d/Iterative-Design-Hifi?node-id=47-338&p=f&t=AKfb0EDoYf5GE5ee-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=47%3A338">https://www.figma.com/proto/4IUXrHO1lsUBFQBXD6qF8d/Iterative-Design-Hifi?node-id=47-338&p=f&t=AKfb0EDoYf5GE5ee-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=47%3A338</a>
+Figma Prototype: <a style = {{color: "white"}} href = "https://www.figma.com/design/4IUXrHO1lsUBFQBXD6qF8d/Iterative-Design-Hifi?node-id=0-1&t=LK9aBsMlr0yr4GBZ-1"> https://www.figma.com/design/4IUXrHO1lsUBFQBXD6qF8d/Iterative-Design-Hifi?node-id=0-1&t=LK9aBsMlr0yr4GBZ-1</a>
+
+<br/>
+<br/>
+
+<b>User Testing:</b>
+
+<br/>
+
+An overarching task we want users to complete on our interactive prototype is to open a spot analysis on the scan and identify the automated summary diagnosis. This task requires users to understand the different features the service provides, and forms a necessary part of the core workflow of the app.
+
+<br/>
+<br/>
+
+Summary of the user testing: 
+
+<ul>
+  <li>Users navigated to a scan through the recent scans section on the main page. </li>
+  <li>Users did not switch between the display modes of the scans. </li>
+  <li>Users clicked the nodes first to show the analysis. </li>
+  <li>Users opened the Summary tab after reading the spot analysis section. </li>
+  <li>Users navigated to the folder last, navigating through the scan carousel mainly. </li>
+</ul> 
+
+Here are our two users' responses to each of our following interview questions:
+
+<b>What was the first thing you did when you saw the UI?</b>
+  <ul>
+    <li>I saw the recent tab and folder tabs at the top of the screen. </li>
+    <li>I scrolled in the recent files tab. </li>
+  </ul> 
+<b>Were there any times you were confused about what a particular button or element did?</b>
+<ul>
+    <li>No. I think all of them were intuitive and reacted as I expected them to. </li>
+    <li>No. </li>
+  </ul> 
+<b>Are there any changes you would make to the application for first-time users?</b>
+<ul>
+  <li>Home page tutorial, some info, or title. </li>
+  <li>Way to categorize/sort scans. </li>
+</ul> 
+<b>Are there any elements that you found particularly unhelpful?</b>
+<ul>
+  <li>No. Besides the elements I couldn’t click, I found most of the buttons to be useful. But, if I had to choose one, it would be the button that changes the displays. But I definitely see how it could be useful.</li>
+  <li>No. </li>
+</ul> 
+
+<b>Interview Reflection: </b>
+
+<br/>
+
+Users interacted similarly with the application, following the same and most efficient steps to achieve the overarching goal set for them. This indicates that the application is streamlined and directs user attention in a consistent and meaningful way.
+
+<br/>
+
+One key observation was that users clicked on the nodes on the scan before opening the summary section. The main feature of the service is to provide an AI diagnosis/summary of the scan to improve radiologists' efficiency, but we found that users did not view this diagnosis/summary immediately. An improvement to make in the future would be to display the summary initially instead of having users manually open it, ensuring that the main functionality of the application is first interacted with.
+
+
 
               </p>
 
