@@ -1,3 +1,6 @@
+import './App.css';
+import * as rive from "@rive-app/canvas";
+
 import React, { useEffect } from "react";
 import { useState } from "react";
 import logo from './logo.svg';
@@ -61,11 +64,45 @@ import hffolderlist from './images/hffolderlist.png';
 import hfsettings from './images/hfsettings.png';
 import hfscan from './images/hfscan.png';
 import hfspot from './images/hfspot.png';
+import { graphs } from './desmospages.tsx';
 
+const tau = 2*Math.PI
+
+const marginwidth = 75
+const N = graphs.length
+
+const currdate = new Date();
+
+const desparagraph = [
+  "I was first introduced to Desmos in my 8th grade Algebra class, during a unit on linear equations.",
+  "I quickly found myself entranced with the graphing program's colors and curves, its precision,",
+  "and the mystery of what all its built-in functions were. What was a 'cos'? What was a 'tan'?",
+  "At first, I mostly used Desmos to prototype explicit functions I was building, functions that could",
+  "reverse the digits of a number, calculate the partitions of any integer, or calculate the infinite",
+  "sequence of angles in the koch fractal curve.",
+  "",
+  "In the " + (currdate.getFullYear()-2015).toString() + " years since that fateful day, I've grown to use Desmos for practically everything, whether it be",
+  "creating visual art, physics simulations, architectural blueprints, organization systems, rollercoasters,",
+  "music making programs, procedural animation, multi-level action games with functioning NPC AI, ",
+  "topological demonstrations, old (and new!) board games, 3D renderers, maze generators, and even",
+  "early prototypes of this very website.",
+  "",
+  "Feel free to click around and explore!"
+
+]
+
+//TODO: Add blurb descriptions of each project!
+//TODO: Make a "back to home" button!
+//TODO: USE GITHUB DESKTOP APP
 // import rivehover from './images/rivehover.png';
-import './App.css';
-import * as rive from "@rive-app/canvas";
 
+var x = 5;
+var curpage = 0;
+var curphoto = redesignhovered;
+
+var fontselect = Math.random();
+
+//Page 2
 function accesscomponents(){
   return <div className="App" style={{backgroundColor: "black"}}>
       {/* <header className="App-header"> */}
@@ -241,6 +278,7 @@ function accesscomponents(){
     </div>
 }
 
+//Page 3
 function personas(){
   return <div className="App" style={{backgroundColor: "black"}}>
       {/* <header className="App-header"> */}
@@ -462,6 +500,7 @@ function personas(){
     </div>
 }
 
+//Page 4
 function responsiveredesign(){
   return <div className="App" style={{backgroundColor: "black"}}>
       <svg className="svgwindow" fill = "true"
@@ -664,6 +703,7 @@ WebAim WAVE gave it 10 “very low contrast” errors on the homepage and also s
     </div>
 }
 
+//Page 5
 function iterativedesign(){
   return <div className="App" style={{backgroundColor: "black"}}>
       <svg className="svgwindow" fill = "true"
@@ -1008,6 +1048,211 @@ One key observation was that users clicked on the nodes on the scan before openi
     </div>
 }
 
+//Page 6
+function desmospage() {
+  const wdims = {x: window.innerWidth, y: window.innerHeight};
+  const imscale = wdims.x/2
+
+  return <div key = "pagewrapper" className = "pagewrapper">
+          <svg className="animsvg" fill = "true"
+               width="100%" height={wdims.x/4*Math.ceil(N/4)+imscale*315/560+marginwidth} aria-label="loading screen">
+<rect
+            key = {"Desmos header"}
+            x = {0}
+            y = {0}
+            width = {wdims.x}
+            height = {marginwidth}
+            fill = {"hsl(" + (360*3/N).toString() + " 60% 50%)"}
+            stroke = "hsl(0 0% 0%)"
+            strokeWidth= {1}
+            />
+            <text
+            key = {"Desmostitle"}
+            textAnchor="middle"
+            dominant-baseline = "central"
+            fill = "hsl(0 0% 0%)"
+            fontFamily='Helvetica'
+            fontWeight= "bold"
+            fontSize={40}
+            letterSpacing={20}
+            x = {wdims.x/2}
+            y = {marginwidth/2}
+            >
+                   DESMOS
+            </text>
+            <a href = "">
+            <image 
+            x = "14"
+            y = "14"
+            width = "100"
+            height = "50"
+            href = "https://i.ibb.co/9nchptY/Screenshot-2024-01-14-at-3-00-09-PM.png"
+            onClick={()=>curpage = 0}
+            />
+            </a>
+            <rect
+            key = {"Background"}
+            x = {0}
+            y = {marginwidth}
+            width = {wdims.x}
+            height = {imscale*315/560}
+            fill = "hsl(10 20% 80%)"
+            stroke = "hsl(0 0% 0%)"
+            strokeWidth= {1}
+            />
+            <text
+            key = {"Description"}
+          //   textAnchor="middle"
+            dominant-baseline = "central"
+            fill = "hsl(0 0% 0%)"
+            fontFamily='Helvetica'
+          //   fontWeight= "bold"
+            
+            fontSize={15}
+          //   letterSpacing={20}
+            x = {wdims.x/2 - marginwidth/2}
+            y = {marginwidth + (0.2*imscale*315/560)/2+7}
+            >
+                  {Array.from(Array(desparagraph.length).keys()).map((linenum)=>{
+                      const linespace = 15
+                   return  <tspan x={wdims.x/2 - marginwidth/2}
+                   y = {marginwidth + (0.2*imscale*315/560)/2+7 + linenum*linespace + 5}
+                   >{desparagraph[linenum]}</tspan>
+            })}
+            </text>
+            <foreignObject width={0.8*imscale} height={0.8*imscale*315/560} x = {marginwidth/2} y = {marginwidth + (0.2*imscale*315/560)/2}>
+                   <iframe width={0.8*imscale} height={0.8*imscale*315/560}
+                   src = {"https://www.youtube.com/embed/FYMmFFY1V1s?si=tKZSR2kDAT2tjzSg"}
+                   title="YouTube video player" 
+                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                   allowFullScreen></iframe>
+            </foreignObject>
+              {Array.from(Array(N).keys()).map((i)=>{
+            const initorigin = {x: (i%4)*wdims.x/4 + wdims.x/8, y: marginwidth + wdims.x/4*Math.floor(i/4) + 200 + imscale*315/560}
+            const neworigin = initorigin
+            const origin = {x: neworigin.x - wdims.x/8,y:neworigin.y - 200}
+            {/* <div><a href=https://www.desmos.com/calculator/nvjuiqtb07><img src=https://www.desmos.com/calc_thumbs/production/nvjuiqtb07.png></br>songmaker pt 2, reversing time</a></div> */}
+return <g>
+            <rect
+            key = {"tab " + i.toString()}
+            x = {origin.x}
+            y = {origin.y}
+            width = {wdims.x/4}
+            height = {wdims.x/4}
+            fill = {"hsl(" + ((6*i + window.scrollY/20)%360).toString() + " 40% 90%)"}
+            stroke = "hsl(0 0% 0%)"
+            strokeWidth= {1}
+            />
+            <text
+            key = {"Title" + i.toString()}
+            textAnchor="middle"
+            dominant-baseline = "central"
+            fill = "hsl(0 0% 0%)"
+            fontFamily='Helvetica'
+            fontWeight= "bold"
+            fontSize={15}
+            letterSpacing={2}
+            x = {origin.x + wdims.x/8}
+            y = {origin.y + 20}
+            >
+                   {graphs[i].title}
+            </text>
+            <a href={"https://www.desmos.com/calculator/" + graphs[i].code}>
+            <image
+            x = {origin.x + wdims.x/4/8}
+            y = {origin.y + wdims.x/4/8}
+            width = {3/4*wdims.x/4}
+            height = {3/4*wdims.x/4}
+            href = {"https://www.desmos.com/calc_thumbs/production/" + graphs[i].code + ".png"}
+            />
+            </a>
+</g>
+              })}
+          </svg>
+      </div>
+  // Otherwise, display our main app window
+}
+
+//Page 1
+function uiuxredirectpage(){
+  //TODO: Maybe make some little hover popups on the right hand side
+
+  return <div className = "App" style={{backgroundColor: "black"}}>
+          <svg className="svgwindow" fill = "true" width="100%" height={100}>
+            <text
+                key = {"nametitle"}
+                x = {"50%"}
+                y = {50}
+                text-anchor="middle"
+                dominant-baseline = "central"
+                textLength={2*520}
+                fontSize={32}
+                fill = "hsl(0 100% 100%)"
+                fontFamily='Helvetica'
+                fontWeight= "bold"
+                >
+                    CSCI 1300: INTERACTION DESIGN
+              </text>
+          </svg>
+        <div className="hwrapper" style={{backgroundColor: "black", display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
+                <div className="list" style={{backgroundColor: "black", display: "flex", flexDirection: "column", alignItems: "flex-start"}}>
+                  <button type="button" class = "button button1" onClick={() => curpage = 2}
+                  onMouseOver={() => curphoto = redesignhovered}>Accessible Components</button>
+                  
+                  <button type="button" class = "button button1" onClick={() => curpage = 3}
+                  onMouseOver={() => curphoto = rattycookersketch}>Personas and Storyboarding</button>
+                  
+                  <button type="button" class = "button button1" onClick={() => curpage = 4}
+                    onMouseOver={() => curphoto = remademac}>Responsive Redesign</button>
+                  
+                  <button type="button" class = "button button1" onClick={() => curpage = 5}
+                    onMouseOver={() => curphoto = hfscan}>Iterative Design</button>
+                </div>
+                
+                <div width = "800" height = "800" style={{overflow: "hidden"}}>
+                  <img src={curphoto} width = "800" className="screenshot" alt="logo" />
+                </div>
+        </div>
+        <svg className="svgwindow" fill = "true"
+                      width="100%" height = {500} aria-label="loading screen">
+        </svg>
+  </div>
+}
+
+//Page 0
+function homepage(){
+  return <div className="App" style={{backgroundColor: "black"}}>
+      <svg className="svgwindow" fill = "true" width="100%" height={100}>
+        <text
+            key = {"nametitle"}
+            x = {"50%"}
+            y = {50}
+            text-anchor="middle"
+            dominant-baseline = "central"
+            textLength={2*520}
+            fontSize={32}
+            fill = "hsl(0 100% 100%)"
+            fontFamily='Helvetica'
+            fontWeight= "bold"
+            >
+                DYLAN HWANG LEE {x.toString()}
+            </text>
+            </svg>
+
+    <iframe style={{border: "none"}} width="768" height="576" src="https://rive.app/s/pCpD0GGwDUKLlyGCU5WYhw/embed?runtime=rive-renderer" allowfullscreen allow="autoplay"></iframe>
+    <div className="Footer" style={{backgroundColor: "black", display: "flex", justifyContent: "space-evenly", padding: "20px"}}>
+        <button type="button" class = "button button1" onClick={() => x = x + 1}>Music</button>
+        <button type="button" class = "button button1" onClick={() => x = x + 1}>Animation</button>
+        <button type="button" class = "button button1" onClick={() => curpage = 6}>Desmos</button>
+        <button type="button" class = "button button1" onClick={() => curpage = 1}>UI/UX work</button>
+        <button type="button" class = "button button1" onClick={() => x = x + 1}>About</button>
+      </div>
+    <svg className="svgwindow" fill = "true"
+                 width="100%" height= "fill" aria-label="loading screen">
+      </svg>
+  </div>
+}
+
 function App() {
   const [Timer, setTimer] = useState(0);
   useEffect(() => {
@@ -1022,9 +1267,28 @@ function App() {
     }
 })
 
-  return (
-    iterativedesign()
-  );
+  if(curpage == 0){
+    return homepage();
+  }
+  else if (curpage == 1){
+    return uiuxredirectpage();
+  }
+  else if (curpage == 2){
+    return accesscomponents();
+  }
+  else if (curpage == 3){
+    return personas();
+  }
+  else if (curpage == 4){
+    return responsiveredesign();
+  }
+  else if (curpage == 5){
+    return iterativedesign();
+  }
+  else{
+    return desmospage();
+  }
+  
 }
 
 export default App;
